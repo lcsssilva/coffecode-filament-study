@@ -1,70 +1,108 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Policies;
 
-use Illuminate\Foundation\Auth\User as AuthUser;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CategoryPolicy
 {
     use HandlesAuthorization;
-    
-    public function viewAny(AuthUser $authUser): bool
+
+    /**
+     * Determine whether the user can view any models.
+     */
+    public function viewAny(User $user): bool
     {
-        return $authUser->can('ViewAny:Category');
+        return $user->can('view_any_category');
     }
 
-    public function view(AuthUser $authUser, Category $category): bool
+    /**
+     * Determine whether the user can view the model.
+     */
+    public function view(User $user, Category $category): bool
     {
-        return $authUser->can('View:Category');
+        return $user->can('view_category');
     }
 
-    public function create(AuthUser $authUser): bool
+    /**
+     * Determine whether the user can create models.
+     */
+    public function create(User $user): bool
     {
-        return $authUser->can('Create:Category');
+        return $user->can('create_category');
     }
 
-    public function update(AuthUser $authUser, Category $category): bool
+    /**
+     * Determine whether the user can update the model.
+     */
+    public function update(User $user, Category $category): bool
     {
-        return $authUser->can('Update:Category');
+        return $user->can('update_category');
     }
 
-    public function delete(AuthUser $authUser, Category $category): bool
+    /**
+     * Determine whether the user can delete the model.
+     */
+    public function delete(User $user, Category $category): bool
     {
-        return $authUser->can('Delete:Category');
+        return $user->can('delete_category');
     }
 
-    public function restore(AuthUser $authUser, Category $category): bool
+    /**
+     * Determine whether the user can bulk delete.
+     */
+    public function deleteAny(User $user): bool
     {
-        return $authUser->can('Restore:Category');
+        return $user->can('{{ DeleteAny }}');
     }
 
-    public function forceDelete(AuthUser $authUser, Category $category): bool
+    /**
+     * Determine whether the user can permanently delete.
+     */
+    public function forceDelete(User $user, Category $category): bool
     {
-        return $authUser->can('ForceDelete:Category');
+        return $user->can('{{ ForceDelete }}');
     }
 
-    public function forceDeleteAny(AuthUser $authUser): bool
+    /**
+     * Determine whether the user can permanently bulk delete.
+     */
+    public function forceDeleteAny(User $user): bool
     {
-        return $authUser->can('ForceDeleteAny:Category');
+        return $user->can('{{ ForceDeleteAny }}');
     }
 
-    public function restoreAny(AuthUser $authUser): bool
+    /**
+     * Determine whether the user can restore.
+     */
+    public function restore(User $user, Category $category): bool
     {
-        return $authUser->can('RestoreAny:Category');
+        return $user->can('{{ Restore }}');
     }
 
-    public function replicate(AuthUser $authUser, Category $category): bool
+    /**
+     * Determine whether the user can bulk restore.
+     */
+    public function restoreAny(User $user): bool
     {
-        return $authUser->can('Replicate:Category');
+        return $user->can('{{ RestoreAny }}');
     }
 
-    public function reorder(AuthUser $authUser): bool
+    /**
+     * Determine whether the user can replicate.
+     */
+    public function replicate(User $user, Category $category): bool
     {
-        return $authUser->can('Reorder:Category');
+        return $user->can('{{ Replicate }}');
     }
 
+    /**
+     * Determine whether the user can reorder.
+     */
+    public function reorder(User $user): bool
+    {
+        return $user->can('{{ Reorder }}');
+    }
 }

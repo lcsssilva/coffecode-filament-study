@@ -6,13 +6,6 @@
       'EloquentSerialize' => 'AnourValar\\EloquentSerialize\\Facades\\EloquentSerializeFacade',
     ),
   ),
-  'bezhansalleh/filament-plugin-essentials' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'BezhanSalleh\\PluginEssentials\\PluginEssentialsServiceProvider',
-    ),
-  ),
   'bezhansalleh/filament-shield' => 
   array (
     'aliases' => 
@@ -73,13 +66,6 @@
       0 => 'Filament\\Notifications\\NotificationsServiceProvider',
     ),
   ),
-  'filament/schemas' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Filament\\Schemas\\SchemasServiceProvider',
-    ),
-  ),
   'filament/support' => 
   array (
     'providers' => 
@@ -94,13 +80,6 @@
       0 => 'Filament\\Tables\\TablesServiceProvider',
     ),
   ),
-  'filament/upgrade' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Filament\\Upgrade\\UpgradeServiceProvider',
-    ),
-  ),
   'filament/widgets' => 
   array (
     'providers' => 
@@ -113,6 +92,13 @@
     'providers' => 
     array (
       0 => 'Kirschbaum\\PowerJoins\\PowerJoinsServiceProvider',
+    ),
+  ),
+  'laravel/breeze' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
     ),
   ),
   'laravel/sail' => 
@@ -138,6 +124,13 @@
     'providers' => 
     array (
       0 => 'Livewire\\LivewireServiceProvider',
+    ),
+  ),
+  'lucascudo/laravel-pt-br-localization' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Lucascudo\\LaravelPtBRLocalization\\LaravelPtBRLocalizationServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -168,13 +161,6 @@
       0 => 'Pest\\Laravel\\PestServiceProvider',
     ),
   ),
-  'phiki/phiki' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Phiki\\Adapters\\Laravel\\PhikiServiceProvider',
-    ),
-  ),
   'ryangjchandler/blade-capture-directive' => 
   array (
     'aliases' => 
@@ -186,11 +172,15 @@
       0 => 'RyanChandler\\BladeCaptureDirective\\BladeCaptureDirectiveServiceProvider',
     ),
   ),
-  'spatie/laravel-medialibrary' => 
+  'spatie/laravel-ignition' => 
   array (
+    'aliases' => 
+    array (
+      'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
+    ),
     'providers' => 
     array (
-      0 => 'Spatie\\MediaLibrary\\MediaLibraryServiceProvider',
+      0 => 'Spatie\\LaravelIgnition\\IgnitionServiceProvider',
     ),
   ),
   'spatie/laravel-permission' => 
